@@ -2656,6 +2656,9 @@ body.popup-open:has(#popup-cookie.active) {
   display: -ms-flexbox;
   display: flex;
 }
+.popup-outer-box {
+  top: auto;
+}
 .popup-outer-box.popup-cookie {
   padding-bottom: 40px;
   padding-bottom: 4rem;
