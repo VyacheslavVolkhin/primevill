@@ -745,7 +745,7 @@
 			}
 		}
 	}
-	
+
 	&.show-form {
 		.form-wrap {
 			transform: translateX(-33.33%);
@@ -884,6 +884,9 @@
 }
 body.popup-open {
 	overflow: hidden;
+	&:has(#popup-cookie.active) {
+		overflow: visible;
+	}
 }
 .popup-outer-box {
 	display: none;
@@ -915,6 +918,10 @@ body.popup-open {
 .popup-outer-box {
 	&.popup-cookie {
 		padding-bottom: 4rem;
+		background: none;
+		.popup-box {
+			border: 1px solid #eee;
+		}
 	}
 }
 .popup-cookie-box {

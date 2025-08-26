@@ -2623,6 +2623,9 @@ html.with-fancybox body.hide-scrollbar {
 body.popup-open {
   overflow: hidden;
 }
+body.popup-open:has(#popup-cookie.active) {
+  overflow: visible;
+}
 .popup-outer-box {
   display: none;
   padding: 20px var(--paddingContainer);
@@ -2656,6 +2659,10 @@ body.popup-open {
 .popup-outer-box.popup-cookie {
   padding-bottom: 40px;
   padding-bottom: 4rem;
+  background: none;
+}
+.popup-outer-box.popup-cookie .popup-box {
+  border: 1px solid #eee;
 }
 .popup-cookie-box {
   display: -ms-flexbox;
