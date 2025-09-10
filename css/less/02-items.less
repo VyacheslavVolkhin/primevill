@@ -1,6 +1,7 @@
 /* ----------------------------------- *\
 			items styles
 \* ----------------------------------- */
+
 .item-tile-project {
 	display: flex;
 	flex-direction: column;
@@ -119,6 +120,23 @@
 		aspect-ratio: 415/500;
 		border-radius: 1rem;
 		margin-bottom: 2.4rem;
+	}
+}
+.item-tile-info-col {
+	position: relative;
+	padding-bottom: 20px;
+	.tile-photo {
+		aspect-ratio: 560/300;
+		border-radius: var(--mainRadius);
+	}
+	.tile-info-wrap {
+		padding: 3rem 0 0 0;
+	}
+	li {
+		margin-bottom: 0.7em;
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 }
 .item-tile-info-main {
@@ -683,6 +701,9 @@
 	}
 }
 @media (min-width: 1024px) {
+	.item-tile-info-col {
+		font-size: 18px;
+	}
 	.item-tile-info-main {
 		ul {
 			font-size: 18px;

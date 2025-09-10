@@ -259,6 +259,21 @@ h3, .h3-title {
 	border-radius: 3rem;
 	border: 1px solid fade(#7E221A, 20);
 	padding: 0 5rem;
+	&.type-small {
+		border-radius: 16px;
+		table {
+			th, td {
+				height: 5.3rem;
+				padding-left: 3rem;
+				padding-right: 3rem;
+			}
+		}
+		tbody {
+			th {
+				font-weight: 500;
+			}
+		}
+	}
 	&.type-second {
 		padding: 0;
 		border-color: var(--clr-att);

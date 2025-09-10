@@ -65,7 +65,7 @@ html.with-fancybox body.hide-scrollbar {
 	width: 100%;
 }
 .wrap {
-	overflow: hidden;
+	overflow: visible;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -95,6 +95,9 @@ html.with-fancybox body.hide-scrollbar {
 .header {
 	z-index: 99;
 	margin-bottom: 30px;
+	position: sticky;
+	top: 0;
+	background: #fff;
 	&:has(+.section-order-box) {
 		margin-bottom: 0;
 	}

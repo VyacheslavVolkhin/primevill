@@ -325,10 +325,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			el: '.slider-order-pagination',
 			clickable: true,
 		},
-		autoplay: {
-			delay: 3500,
-			disableOnInteraction: false,
-		},
+		autoplay: false,
 		navigation: {
 			nextEl: '.button-slider-order-next',
 			prevEl: '.button-slider-order-prev',
@@ -373,6 +370,47 @@ document.addEventListener("DOMContentLoaded", function() {
 			disableOnInteraction: false,
 		},
 		navigation: false,
+	});
+
+
+	//slider photos thumbs preview
+	document.querySelectorAll('.tiles-thumbs-slider-box').forEach(function(container) {
+		const thumbsEl = container.querySelector('.slider-photos-thumbs .swiper');
+		const mainEl = container.querySelector('.slider-photos-main .swiper');
+		const nextMBtn = container.querySelector('.button-slider-photos-main-next');
+		const prevMBtn = container.querySelector('.button-slider-photos-main-prev');
+		const nextTBtn = container.querySelector('.button-slider-photos-thumbs-next');
+		const prevTBtn = container.querySelector('.button-slider-photos-thumbs-prev');
+		const mainPag = container.querySelector('.slider-photos-main-pagination');
+	
+		const swiperPhotosPreview = new Swiper(thumbsEl, {
+			loop: false,
+			slidesPerView: 3,
+			spaceBetween: 0,
+			threshold: 3,
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+			freeMode: false,
+			breakpoints: {
+				1024: {
+				},
+			},
+		});
+		const swiperPhotosMain = new Swiper(mainEl, {
+			loop: false,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			autoHeight: true,
+			speed: 400,
+			threshold: 5,
+			freeMode: false,
+			watchSlidesProgress: true,
+			navigation: false,
+			pagination: false,
+			thumbs: {
+				swiper: swiperPhotosPreview,
+			},
+		});
 	});
 
 
