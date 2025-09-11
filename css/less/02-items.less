@@ -53,7 +53,10 @@
 	color: var(--clr-base);
 	transition: all ease 0.2s;
 	&:hover {
-		color: var(--clr-att);
+		color: var(--clr-base);
+		.tile-title, .tile-date {
+			color: var(--clr-att);
+		}
 	}
 	.tile-photo-wrap {
 		margin-bottom: 2rem;
@@ -66,10 +69,12 @@
 		color: var(--clr-att);
 		line-height: 1.1;
 		margin: 0 0 2rem 0;
+		transition: color ease 0.2s;
 	}
 	.tile-title {
 		margin: 0 0 2rem 0;
 		line-height: 1.1;
+		transition: color ease 0.2s;
 	}
 }
 .item-tile-faq {
@@ -112,6 +117,15 @@
 .item-tile-gallery {
 	display: block;
 	position: relative;
+	&:hover {
+		.tile-info-wrap {
+			opacity: 1;
+		}
+	}
+	.tile-info-wrap {
+		opacity: 0;
+		transition: all ease 0.2s;
+	}
 	.tile-title {
 		font-weight: 500;
 		line-height: 1.1;
@@ -125,12 +139,40 @@
 .item-tile-info-col {
 	position: relative;
 	padding-bottom: 20px;
+	&:hover {
+		.tile-title {
+			color: var(--clr-att);
+		}
+		.tile-photo {
+			&:after, &:before {
+				opacity: 1;
+			}
+		}
+	}
 	.tile-photo {
 		aspect-ratio: 560/300;
 		border-radius: var(--mainRadius);
+		&:after {
+			content: "";
+			opacity: 0;
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: fade(#241F21, 60) url(../img/icons/arrow-hover.svg) no-repeat;
+			background-position: right 3rem top 3rem;
+			background-size: 5rem auto;
+			z-index: 2;
+			transition: opacity ease 0.2s;
+		}
 	}
 	.tile-info-wrap {
 		padding: 3rem 0 0 0;
+	}
+	.tile-title {
+		transition: color ease 0.2s;
 	}
 	li {
 		margin-bottom: 0.7em;
