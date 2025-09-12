@@ -6,6 +6,44 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 
+	//btn tgl and add
+	let tglButtons = document.querySelectorAll('.js-btn-tgl')
+	let addButtons = document.querySelectorAll('.js-btn-add')
+	let buttonsTglOne = document.querySelectorAll('.js-btn-tgl-one');
+	for (i = 0;i < tglButtons.length;i++) {
+		tglButtons[i].addEventListener('click', function(e) {
+			this.classList.contains('active') ? this.classList.remove('active') : this.classList.add('active')
+			e.preventDefault()
+			return false
+		})
+	}
+	for (i = 0;i < addButtons.length;i++) {
+		addButtons[i].addEventListener('click', function(e) {
+			if (!this.classList.contains('active')) {
+				this.classList.add('active');
+				e.preventDefault()
+				return false
+			}
+		})
+	}
+	buttonsTglOne.forEach(function(button) {
+		button.addEventListener('click', function(e) {
+			e.preventDefault();
+			let toggleButtonsWrap = this.closest('.js-toggle-buttons');
+	
+			if (this.classList.contains('active')) {
+				this.classList.remove('active');
+			} else {
+				toggleButtonsWrap.querySelectorAll('.js-btn-tgl-one').forEach(function(btn) {
+					btn.classList.remove('active');
+				});
+				this.classList.add('active');
+			}
+			return false;
+		});
+	});
+	
+
 	//js popup wrap
 	const togglePopupButtons = document.querySelectorAll('.js-btn-popup-toggle')
 	const closePopupButtons = document.querySelectorAll('.js-btn-popup-close')

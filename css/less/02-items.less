@@ -110,7 +110,14 @@
 		}
 	}
 	.tile-content-block {
-		display: none;
+		display: block;
+		overflow: hidden;
+		height: 0;
+		interpolate-size: allow-keywords;
+		transition: all ease 0.2s;
+	}
+	.active~.tile-content-block {
+		height: auto;
 		padding-bottom: 3rem;
 	}
 }
