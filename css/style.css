@@ -872,16 +872,22 @@ html.with-fancybox body.hide-scrollbar {
   -ms-flex-direction: column;
       flex-direction: column;
   min-height: 100%;
+  transition: all ease 0.2s;
+  color: var(--clr-base);
+}
+.item-tile-project:hover {
+  color: var(--clr-att);
 }
 .item-tile-project .tile-photo {
   aspect-ratio: 850/500;
+  aspect-ratio: 300/240;
   border-radius: 1rem;
 }
 .item-tile-project .tile-info-wrap {
   -ms-flex: 1;
       flex: 1;
-  padding: 40px 0 0 0;
-  padding: 4rem 0 0 0;
+  padding: 20px 0 0 0;
+  padding: 2rem 0 0 0;
 }
 .item-tile-project .tile-action-wrap {
   display: block;
@@ -891,6 +897,13 @@ html.with-fancybox body.hide-scrollbar {
 .item-tile-project .btn {
   padding: 0 70px;
   padding: 0 7rem;
+}
+.item-tile-project .tile-title {
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+.item-tile-project .tile-title:last-child {
+  margin-bottom: 0;
 }
 .item-tile-team,
 .item-tile-photo {
@@ -1006,12 +1019,16 @@ html.with-fancybox body.hide-scrollbar {
 .item-tile-gallery {
   display: block;
   position: relative;
+  color: var(--clr-base);
+}
+.item-tile-gallery:hover {
+  color: var(--clr-att);
 }
 .item-tile-gallery:hover .tile-info-wrap {
   opacity: 1;
 }
 .item-tile-gallery .tile-info-wrap {
-  opacity: 0;
+  opacity: 1;
   transition: all ease 0.2s;
 }
 .item-tile-gallery .tile-title {
@@ -3307,7 +3324,7 @@ body.popup-open:has(#popup-cookie.active) {
   .menu-box .menu {
     display: -ms-flexbox;
     display: flex;
-    gap: 2rem;
+    gap: 0 2rem;
     -ms-flex-align: start;
         align-items: flex-start;
     -ms-flex-wrap: wrap;
@@ -3663,6 +3680,7 @@ select.form-input:required:invalid {
   border-radius: 30px;
   padding: 0 30px;
   padding: 0 3rem;
+  padding-top: 3px !important;
   font-size: 18px;
   background: var(--clr-att);
   border: 1px solid var(--clr-att);

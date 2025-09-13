@@ -6,13 +6,19 @@
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
+	transition: all ease 0.2s;
+	color: var(--clr-base);
+	&:hover {
+		color: var(--clr-att);
+	}
 	.tile-photo {
 		aspect-ratio: 850/500;
+		aspect-ratio: 300/240;
 		border-radius: 1rem;
 	}
 	.tile-info-wrap {
 		flex: 1;
-		padding: 4rem 0 0 0;
+		padding: 2rem 0 0 0;
 	}
 	.tile-action-wrap {
 		display: block;
@@ -20,6 +26,13 @@
 	}
 	.btn {
 		padding: 0 7rem;
+	}
+	.tile-title {
+		margin-bottom: 5px;
+		margin-top: 0;
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 }
 .item-tile-team, .item-tile-photo {
@@ -124,13 +137,15 @@
 .item-tile-gallery {
 	display: block;
 	position: relative;
+	color: var(--clr-base);
 	&:hover {
+		color: var(--clr-att);
 		.tile-info-wrap {
 			opacity: 1;
 		}
 	}
 	.tile-info-wrap {
-		opacity: 0;
+		opacity: 1;
 		transition: all ease 0.2s;
 	}
 	.tile-title {
